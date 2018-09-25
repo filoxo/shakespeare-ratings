@@ -3,11 +3,12 @@
   height: 40px;
   margin: 10px auto;
   background-color: #333;
-  display: inline-block;
+  display: block;
   border-radius: 100%;
   -webkit-animation: sk-scaleout 1s infinite ease-in-out;
   animation: sk-scaleout 1s infinite ease-in-out;
   animation-delay: 2s;
+  transform: scale(0);
 }
 
 @-webkit-keyframes sk-scaleout {
