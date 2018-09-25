@@ -11,6 +11,23 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier src/**/*.{js,json,css} --write --no-semi --single-quote --trailing-comma es5 --tab-width 2"
+  },
+  "devDependencies": {
+    "husky": "^1.0.0-rc.15",
+    "lint-staged": "^7.3.0",
+    "prettier": "1.14.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,json,css}": [
+      "prettier --write --no-semi --single-quote --trailing-comma es5 --tab-width 2",
+      "git add"
+    ]
   }
 }
