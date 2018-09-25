@@ -6,11 +6,15 @@ export default class Review extends React.Component {
     super(props)
     this.state = {
       localeDate: new Date(props.publish_date).toLocaleString(),
+      loadingBody: false,
     }
   }
+  loadBody = () => {
+    this.setState({ loadingBody: true }, this.props.loadReviewBody)
+  }
   render() {
-    const { rating, author, id } = this.props
-    const { localeDate } = this.state
+    const { rating, author, id, body } = this.props
+    const { localeDate, loadingBody } = this.state
     return (
       <div className="review" id={`review-${id}`}>
         <div className="reviewContent">
@@ -19,11 +23,20 @@ export default class Review extends React.Component {
             Posted by {author} on {localeDate}
           </p>
         </div>
-        <div className="reviewActions">
-          <button type="button" className="reviewMoreBtn">
-            See full comment
-          </button>
-        </div>
+        {!body ? (
+          <div className="reviewActions">
+            <button
+              type="button"
+              className="reviewMoreBtn"
+              disabled={loadingBody}
+              onClick={this.loadBody}
+            >
+              See full comment
+            </button>
+          </div>
+        ) : (
+          <p className="reviewBody">{body}</p>
+        )}
       </div>
     )
   }

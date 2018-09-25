@@ -32,3 +32,9 @@
   padding: 0.3rem;
   color: var(--color-main);
 }
+.reviewMoreBtn:disabled {
+  opacity: 0.8;
+}
+.reviewBody {
+  margin: 1rem 0.5rem 0.5rem;
+}
