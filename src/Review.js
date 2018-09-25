@@ -1,11 +1,21 @@
 import React from 'react'
 import './Review.css'
 
+const dateOptions = {
+  weekday: 'short',
+  year: 'numeric',
+  month: 'short',
+  day: 'numeric',
+}
+
 export default class Review extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      localeDate: new Date(props.publish_date).toLocaleString(),
+      localeDate: new Date(props.publish_date).toLocaleString(
+        'en-US',
+        dateOptions
+      ),
       loadingBody: false,
     }
   }
