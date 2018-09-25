@@ -1,0 +1,34 @@
+.review {
+  max-width: 20rem;
+  margin: 1rem auto;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
+}
+.reviewContent {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+.rating {
+  background-color: var(--color-main);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 2;
+  width: 4rem;
+  height: 3rem;
+  border-radius: 3rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  margin-right: 0.5rem;
+  text-align: center;
+}
+.reviewActions {
+  text-align: right;
+}
+.reviewMoreBtn {
+  font-size: 0.8rem;
+  background: none;
+  border: none;
+  padding: 0.3rem;
+  color: var(--color-main);
+}
