@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Spinner/> renders without errors 1`] = `
+<span
+  aria-busy="true"
+  className="spinner"
+  role="alert"
+>
+  <span
+    className="hideVisually"
+  >
+    Loading...
+  </span>
+</span>
+`;
