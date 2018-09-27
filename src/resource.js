@@ -17,10 +17,10 @@ const handleFetchError = errorMsg => {
   }
 }
 
-export const getReviews = fetch(
-  'http://shakespeare.podium.co/api/reviews',
-  options
-).then(handleFetchError('Error loading reviews'))
+export const getReviews = () =>
+  fetch('http://shakespeare.podium.co/api/reviews', options).then(
+    handleFetchError('Error loading reviews')
+  )
 
 export const getReviewById = id =>
   fetch(`http://shakespeare.podium.co/api/reviews/${id}`, options).then(

@@ -9,7 +9,7 @@ class App extends Component {
     reviews: null,
   }
   componentDidMount() {
-    getReviews
+    getReviews()
       .then(({ data: reviews }) => {
         this.setState({ reviews })
       })
