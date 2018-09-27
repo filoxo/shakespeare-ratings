@@ -32,5 +32,12 @@
       "prettier --write --no-semi --single-quote --trailing-comma es5 --tab-width 2",
       "git add"
     ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js",
+      "!src/registerServiceWorker.js"
+    ]
   }
 }
