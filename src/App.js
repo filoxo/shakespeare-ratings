@@ -29,24 +29,19 @@ class App extends Component {
   render() {
     const { reviews } = this.state
     return (
-      <div className="App">
-        <nav className="nav">
-          <h1 className="title">Shakespeare Reviews</h1>
-        </nav>
-        <main>
-          {reviews === null ? (
-            <Spinner />
-          ) : (
-            reviews.map((review, i) => (
-              <Review
-                key={review.id}
-                loadReviewBody={() => this.loadSingleReview(i)}
-                {...review}
-              />
-            ))
-          )}
-        </main>
-      </div>
+      <React.Fragment>
+        {reviews === null ? (
+          <Spinner />
+        ) : (
+          reviews.map((review, i) => (
+            <Review
+              key={review.id}
+              loadReviewBody={() => this.loadSingleReview(i)}
+              {...review}
+            />
+          ))
+        )}
+      </React.Fragment>
     )
   }
 }
