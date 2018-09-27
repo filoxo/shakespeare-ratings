@@ -7,12 +7,22 @@ const options = {
   }),
 }
 
+const handleFetchError = errorMsg => {
+  return res => {
+    if (res.ok) {
+      return res.json()
+    } else {
+      throw new Error(errorMsg)
+    }
+  }
+}
+
 export const getReviews = fetch(
   'http://shakespeare.podium.co/api/reviews',
   options
-).then(res => res.json())
+).then(handleFetchError('Error loading reviews'))
 
 export const getReviewById = id =>
-  fetch(`http://shakespeare.podium.co/api/reviews/${id}`, options).then(res =>
-    res.json()
+  fetch(`http://shakespeare.podium.co/api/reviews/${id}`, options).then(
+    handleFetchError(`Error loading body for ${id}`)
   )
