@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Review/> should render 1`] = `
+<div
+  className="review"
+  id="review-9783221620868"
+>
+  <div
+    className="reviewContent"
+  >
+    <span
+      className="rating"
+    >
+      0.8
+    </span>
+    <p>
+      Posted by 
+      Kaley Schiller
+       on 
+      Mon, Sep 5, 2016
+    </p>
+  </div>
+  <div
+    className="reviewActions"
+  >
+    <button
+      className="reviewMoreBtn"
+      disabled={false}
+      onClick={[Function]}
+      type="button"
+    >
+      See full comment
+    </button>
+  </div>
+</div>
+`;
