@@ -9,15 +9,20 @@ class App extends Component {
     reviews: null,
   }
   componentDidMount() {
-    getReviews.then(({ data: reviews }) => {
-      this.setState({ reviews })
-    })
+    getReviews
+      .then(({ data: reviews }) => {
+        this.setState({ reviews })
+      })
+      .catch(err => {
+        this.setState({ err })
+      })
   }
   loadSingleReview = reviewIndex => {
     const singleReview = this.state.reviews[reviewIndex]
     getReviewById(singleReview.id).then(({ data: review }) => {
       const reviews = [...this.state.reviews]
-      reviews[reviewIndex] = { ...singleReview, review }
+      const { body } = review
+      reviews[reviewIndex] = { ...singleReview, body }
       this.setState({ reviews })
     })
   }
@@ -32,7 +37,13 @@ class App extends Component {
           {reviews === null ? (
             <Spinner />
           ) : (
-            reviews.map(review => <Review key={review.id} {...review} />)
+            reviews.map((review, i) => (
+              <Review
+                key={review.id}
+                loadReviewBody={() => this.loadSingleReview(i)}
+                {...review}
+              />
+            ))
           )}
         </main>
       </div>
