@@ -15,9 +15,12 @@
     "format": "prettier src/**/*.{js,json,css} --write --no-semi --single-quote --trailing-comma es5 --tab-width 2"
   },
   "devDependencies": {
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
     "husky": "^1.0.0-rc.15",
     "lint-staged": "^7.3.0",
-    "prettier": "1.14.3"
+    "prettier": "1.14.3",
+    "react-test-renderer": "^16.5.2"
   },
   "husky": {
     "hooks": {
